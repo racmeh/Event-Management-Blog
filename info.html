@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blog</title>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+@media (max-width: 765px) {
+.navbar-toggle {
+display: block;
+background-color:#D3D3D3;
+color:red;
+}
+.navbar-collapse {
+border-top: 0px solid transparent;
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.navbar-collapse.collapse {
+display:toggle;
+}
+.navbar-nav {
+float: none;
+margin: 7.5px -15px;
+}
+.navbar-nav>li {
+float: none;
+}
+.navbar-nav>li>a {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+.navbar-inverse .navbar-nav > .active > a{
+color:white;
+background:#00bfbc;
+}
+.navbar-inverse .navbar-nav > .active > a:hover{
+color:white;
+background:#00bfbc;
+}
+.navbar-inverse .navbar-nav > .second > a:hover{
+color:white;
+background:#00bfbc;
+}
+.navbar-inverse .navbar-nav > .second > a{
+color:black;
+background-color:white;
+}
+.navbar-inverse .navbar-nav > .third > a:hover{
+color:white;
+background:#00bfbc;
+}
+.third{
+background-color:white;
+}
+.navbar-inverse .navbar-nav > .fourth > a:hover{
+color:white;
+background:#00bfbc;
+}
+.fourth{
+background-color:white;
+}
+.navbar-inverse .navbar-nav > .fifth > a:hover{
+color:white;
+background:#00bfbc;
+}
+.fifth{
+background:white;
+}
+}
+@media (min-width: 765.1px)
+{
+.navbar-inverse .navbar-nav > .second > a{
+color:black;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+color: white;
+background-color:black;
+}
+.navbar .container-fluid .abc1 .navbar-collapse .navbar-nav > li > a:hover,.navbar .container-fluid .abc1 .navbar-collapse .navbar-nav > li > a:focus{
+background-color:black;
+color:white;
+}
+}
+.navbar {
+background-color: white;
+background: white;
+border-color: transparent;
+box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.body{
+overflow-x:hidden;
+background:#F5F5F5
+}
+.footer{
+background-color: white;
+color: #757575;
+width: auto;
+height: 60px;
+margin-left: 0px;
+}
+.footer-sm{
+background-color: white;
+color: #757575;
+width: 102%;
+height: 80px;
+margin-left: 0px;
+}
+.footer-xs{
+background-color: white;
+color: #757575;
+padding: 0;
+margin: 0;
+height: 60px;
+text-align: center;
+}
+.panel-heading h3{
+font-weight:bold;
+font-size:1.1em;
+color:grey;
+}
+.panel-body p{
+color: grey;
+font-size:1.2em;
+padding-left: 20px;
+}
+.tab {
+position: relative;
+margin-bottom: -4px;
+width: 100%;
+color: #757575;
+overflow: hidden;
+}
+input {
+position: absolute;
+opacity: 0;
+z-index: -1;
+}
+label {
+position: relative;
+display: block;
+padding: 0 0 0 1em;
+background: #16a085;
+font-weight: bold;
+line-height: 3;
+cursor: pointer;
+}
+.blue label {
+background: #E8E8E8;
+}
+.tab-content {
+max-height: 0;
+overflow: hidden;
+background: #1abc9c;
+-webkit-transition: max-height .35s;
+-o-transition: max-height .35s;
+transition: max-height .35s;
+}
+.blue .tab-content {
+background: white;
+}
+.tab-content p {
+color: grey;
+font-size:1.1em;
+padding-left: 20px;
+}
+/* :checked */
+input:checked ~ .tab-content {
+max-height: 10em;
+}
+/* Icon */
+label::after {
+position: absolute;
+right: 0;
+top: 0;
+display: block;
+width: 3em;
+height: 3em;
+line-height: 3;
+text-align: center;
+-webkit-transition: all .35s;
+-o-transition: all .35s;
+transition: all .35s;
+}
+input[type=checkbox] + label::after {
+content: "+";
+}
+input[type=radio] + label::after {
+content: "\25BC";
+}
+input[type=checkbox]:checked + label::after {
+transform: rotate(315deg);
+}
+input[type=radio]:checked + label::after {
+transform: rotateX(180deg);
+}
+.social-icons{
+font-size: 1.4em;
+padding: 4px;
+}
+.loading{
+height: 100%;
+width: 100%;
+top: 0;
+left: 0;
+position: fixed;
+display: block;
+background-color: white;
+z-index: 2;
+}
+.loading-image{
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 3;
+}
+.floating-button{
+position: fixed;
+right: 20px;
+bottom: 20px;
+z-index: 3;
+}
+.query-box{
+background-color: white;
+width: 350px;
+height: 50px;
+box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.3);
+position: fixed;
+right: 20px;
+bottom: 80px;
+z-index: 3;
+border-radius: 25px;
+padding-left: auto;
+}
+*:focus {
+outline: none;
+}
+@media screen and (max-width: 480px) {
+.query-box {
+width: 300px;
+}
+}
+.rotate{
+transform: rotate(180deg);
+}
+</style>
+<script>
+function function1(){
+document.getElementById("tab-one").setAttribute("type","radio");
+document.getElementById("tab-two").setAttribute("type","radio");
+document.getElementById("tab-three").setAttribute("type","radio");
+var x = document.getElementById("tab-one");
+if(x.type === "radio"){
+x.setAttribute("type","checkbox");
+} else {
+x.setAttribute("type","radio");
+}
+}
+function function2(){
+document.getElementById("tab-one").setAttribute("type","radio");
+document.getElementById("tab-three").setAttribute("type","radio");
+document.getElementById("tab-four").setAttribute("type","radio");
+//function2();
+var x = document.getElementById("tab-two");
+if(x.type === "radio"){
+x.setAttribute("type","checkbox");
+} else {
+x.setAttribute("type","radio");
+}
+}
+function function3(){
+document.getElementById("tab-one").setAttribute("type","radio");
+document.getElementById("tab-two").setAttribute("type","radio");
+document.getElementById("tab-four").setAttribute("type","radio");
+//function2();
+var x = document.getElementById("tab-three");
+if(x.type === "radio"){
+x.setAttribute("type","checkbox");
+} else {
+x.setAttribute("type","radio");
+}
+}
+function function4(){
+document.getElementById("tab-one").setAttribute("type","radio");
+document.getElementById("tab-two").setAttribute("type","radio");
+document.getElementById("tab-three").setAttribute("type","radio");
+//document.getElementById("tab-two").setAttribute("type","checkbox");
+//function2();
+var x = document.getElementById("tab-four");
+if(x.type === "radio"){
+x.setAttribute("type","checkbox");
+} else {
+x.setAttribute("type","radio");
+}
+}
+</script>
+</style>
+</head>
+<body style="background-color:#F4F4F4;">
+<div class="bg">
+<nav class="navbar transparent navbar-inverse navbar-fixed-top hr">
+<div class="container-fluid">
+<div class="navbar-header">
+<img src="list.svg" width="100px" height="45px" alt="HeyMedy" style="position:fixed;top:1%;left:0%;">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="abc1">
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="active"><a href="#">Blog</a></li>
+<li class="second"><a href="#">Home</a></li>
+<li class="third"><a href="#"><i class="fa fa-facebook" style=" color:#3b5998;font-size:20px;"aria-hidden="true"></i></a></li>
+<li class="fourth"><a href="#"><i class="fa fa-twitter" style=" color:#4099FF;font-size:20px;"aria-hidden="true"></i></a></li>
+<li class="fifth"><a href="#"><i class="fa fa-instagram" style=" color:#fb3958;font-size:20px;"aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<div style="position:absolute;top:5vw;">
+<div style="width:72vw;position:absolute;top:5em;background-color:#F4F4F4;left:13vw;font-family:Arial;">
+<div>
+<center><img class="text-center" src="man.jpg" alt="Image" style="border-radius:50%;position:relative;height:100px;width:100px;border:3px solid white;"></center>
+<br/>
+<div style="background-color:#F4F4F4;width:100%;">
+<p style="font-family:Arial;text-align:center;">Tyrion Lannister</p>
+<p style="text-align:center;font-family:Arial;color:grey;text-overflow:ellipsis;overflow:hidden;white-space:normal;width: 99%;">Founder&nbsp;@Alltopstartups.&nbsp;Curator&nbsp;at&nbsp;postanly.com.&nbsp;Columnist&nbsp;at&nbsp;Inc.&nbsp;Featured&nbsp;at&nbsp;HuffPost,&nbsp;Business&nbsp;Insider</p>
+</div>
+</div>
+<br/>
+<h1 style="width:72vw;background-color:#F4F4F4;font-family:Arial;padding-left:1%;padding-right:1%;">The Inconvenient Truths About Getting Work Done</h1>
+<img style="width:72vw;font-family:Arial;height:15vw;" src="ofc.jpg" alt="Image">
+<br/><br/>
+<i><p style="font-family:Arial;color:grey;padding-left:1%;padding-right:1%;">21st June, 2017</p></i>
+<br/>
+<p style="text-align:justify;padding-left:1%;padding-right:1%;">There are good guidelines and high-level principles that are universal, but you alone can define and refine what works for you.
+When your system makes you feel comfortable and confident that your productivity bases are covered, and it has a track record of actually helping you do your work without missing anything important, stick to it.<br/><br/>
+If you try a system and it doesn't work for you, it doesn't mean the system is broken. It just doesn't fit you. Move on. Try something else. Focus on the results, not the system.<br/><br/></p>
+<a><img style="width:72vw;font-family:Arial;height:15vw;" src="abc1.jpg" alt="Image"></a>
+<br/>
+<h3 style="font-family:Arial;padding-left:1%;padding-right:1%;">So, How It's Done?</h3>
+<p style="font-family:Arial;padding-left:1%;padding-right:1%;text-align:justify;">There are good guidelines and high-level principles that are universal, but you alone can define and refine what works for you.
+When your system makes you feel comfortable and confident that your productivity bases are covered, and it has a track record of actually helping you do your work without missing anything important, stick to it.<br/><br/>
+If you try a system and it doesn't work for you, it doesn't mean the system is broken. It just doesn't fit you. Move on. Try something else. Focus on the results, not the system.<br/><br/>
+There are good guidelines and high-level principles that are universal, but you alone can define and refine what works for you.
+When your system makes you feel comfortable and confident that your productivity bases are covered, and it has a track record of actually helping you do your work without missing anything important, stick to it.<br/><br/>
+If you try a system and it doesn't work for you, it doesn't mean the system is broken. It just doesn't fit you. Move on. Try something else. Focus on the results, not the system.<br/><br/></p>
+<div style="width:137.2%;position:absolute;left:-17.8%;">
+<!--footer for large and md and sm-->
+<div class="" style="">
+<div class="row hidden-xs" style="background-color:#E8E8E8">
+<div class="col-sm-2" style="padding: 4% 0% 4% 6%">
+<div class="">
+<img src="list.svg" alt="" style="height: auto; width: 90%">
+</div>
+<div>
+<p style="font-weight:bold;font-size:1.3em;color:grey;padding: 5% 0 0 5%"></p>
+<p></p>
+</div>
+</div>
+<div class="col-sm-2" style="padding: 5% 0 4% 8%">
+<div>
+<p style="font-weight:bold;font-size:0.9em;color:grey">CONTACT</p>
+<div style="font-size:1.3em;color:grey">
+<p>Email</p>
+<p>Address</p>
+<p>Mobile no.</p>
+</div>
+</div>
+</div>
+<div class="col-sm-2" style="padding: 5% 0% 4% 8%">
+<div>
+<p style="font-weight:bold;font-size:0.9em;color:grey">HEYMEDY</p>
+<div style="font-size:1.3em;color:grey">
+<p>About</p>
+<p>Careers</p>
+<p>Help Center</p>
+</div>
+</div>
+</div>
+<div class="col-sm-2" style="padding: 5% 0% 4% 8%">
+<div>
+<p style="font-weight:bold;font-size:0.9em;color:grey">LEGAL</p>
+<div style="font-size:1.3em;color:grey">
+<p>Terms</p>
+<p>Privacy Policy</p>
+</div>
+</div>
+</div>
+<div class="col-sm-3" style="padding: 5% 0% 4% 8%">
+<div>
+<p style="font-size:0.9em;color:grey">SOCIAL MEDIA</p>
+<div style="font-size:1.3em;color:grey">
+<p><i class="fa fa-facebook-square social-icons" style="color:#3b5998"></i>Facebook</p>
+<p><i class="fa fa-instagram social-icons" style="color:#cd486b"></i>Instagram</p>
+<p><i class="fa fa-twitter social-icons" style="color:#00aced"></i>Twitter</p>
+<p><i class="fa fa-linkedin-square social-icons" style="color:#0077b5"></i>LinkedIn</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--new accordian-->
+<div class="">
+<div class="hidden-sm hidden-md hidden-lg">
+<div class="tab blue">
+<input id="tab-one" type="radio" name="tabs2" onclick="function1()">
+<label for="tab-one">CONTACT</label>
+<div class="tab-content">
+<p>Email</p>
+<p>Address</p>
+<p>Mobile no.</p>
+</div>
+</div>
+<div class="tab blue">
+<input id="tab-two" type="radio" name="tabs2" onclick="function2()">
+<label for="tab-two">HEYMEDY</label>
+<div class="tab-content">
+<p>About</p>
+<p>Careers</p>
+</div>
+</div>
+<div class="tab blue">
+<input id="tab-three" type="radio" name="tabs2" onclick="function3()">
+<label for="tab-three">LEGAL</label>
+<div class="tab-content">
+<p>Terms</p>
+<p>Privacy Policy</p>
+</div>
+</div>
+<div class="tab blue">
+<input id="tab-four" type="radio" name="tabs2" onclick="function4()">
+<label for="tab-four">SOCIAL MEDIA</label>
+<div class="tab-content">
+<p><i class="fa fa-facebook-square social-icons" style="color:#3b5998"></i>Facebook</p>
+<p><i class="fa fa-instagram social-icons" style="color:#cd486b"></i>Instagram</p>
+<p><i class="fa fa-twitter social-icons" style="color:#00aced"></i>Twitter</p>
+</div>
+</div>
+</div>
+</div>
+<!--lower footer for lg md and sm-->
+<div >
+<div class="hidden-xs hidden-sm">
+<div class="footer">
+<div class="row">
+<div class="col-sm-6">
+<p style="padding: 3% 0% 0% 10%">Made with <i class="fa fa-heart" style="color: #F44336;font-size:0.9em"></i> in India</p>
+</div>
+<div class="col-sm-6">
+<a href="www.heymedy.com" style="text-decoration:none;color:#757575"><p style="padding: 3% 0% 0% 35%">Copyrights &copy; 2017 Heymedy Healthtech LLP</p></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--lower footer for sm-->
+<div class="hidden-lg hidden-md hidden-xs">
+<div class="footer-sm" style="">
+<div class="text-center" style="padding-top: 10px">
+<p style="padding-top: 0px">Made with <i class="fa fa-heart" style="color: #F44336;font-size:0.9em"></i> in India</p>
+<a href="www.heymedy.com" style="text-decoration:none;color:#757575"><p style="margin-top: -10px">Copyrights &copy; 2017 Heymedy Healthtech LLP</p></a>
+</div>
+</div>
+</div>
+<!--lower footer for xs-->
+<div >
+<div class="hidden-lg hidden-md hidden-sm">
+<div class="footer-xs">
+<p style="margin-bottom: -10px;padding-top: 5px">Made with <i class="fa fa-heart" style="color: #F44336;;font-size:0.9em"></i> in India<br>Copyrights &copy; 2017 Heymedy Healthtech LLP </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
